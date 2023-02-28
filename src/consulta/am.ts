@@ -183,7 +183,7 @@ export default class Consulta {
       let quantidadeStr: string = ($('.Rqtd', `#item_${a}`).text().trim().replace(/\D/g, ''));
       const unidade: string = $('.RUN', `#item_${a}`).text().split(':')[1].trim();
       const precoStr = $('.RvlUnit', `#item_${a}`).text().trim().replace(/\t/g, '').replace(/\n/g, '').replace(' ', '').replace('Vl.Unit.:', '');
-      const codigo: number | null = null;
+      const codigo: number = Number($('.RCod', `#item_${a}`).text().split(':')[1].replace(' ', '').replace(')', '').trim());
       const valorStr: string = $('.valor', `#item_${a}`).html()?.trim().replace(/\t/g, '').replace(/\n/g, '').replace(' ', '') || '';
 
       // conversao
